@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12"><h2 class="text-center">Please login to continue</h2></div>
+  </div>
+  <div class="row">
+    <div class="col-12 offset-md-4 col-md-4">
+      <form class="form" #loginForm="ngForm" (ngSubmit)="submitLogin(loginForm.value)">
+        <div class="form-group">
+          <label for="userName">Username</label>
+          <input id="userName" ngModel name="username" #userName="ngModel" type="text" class="form-control" required>
+          <div class="text-danger small" *ngIf="userName.touched && !userName.valid">Username is required</div>
+        </div>
+        <div class="form-group">
+          <label for="pswd">Password</label>
+          <input id="pswd" ngModel name="password" #pswd="ngModel" type="password" class="form-control" required>
+          <div class="text-danger small" *ngIf="pswd.touched && !pswd.valid">Password is required</div>
+        </div>
+        <div class="text-danger" *ngIf="isInvalidLogin()">Username or password is invalid</div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" [disabled]="loginForm.invalid">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

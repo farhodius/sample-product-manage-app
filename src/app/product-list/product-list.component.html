@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Products</h1>
+    </div>
+  </div>
+  <div class="row" *ngIf="getProductCount() === 0">
+    <div class="col-12">
+      <div>No products found.</div>
+      <a class="btn btn-primary btn-sm" routerLink="/product/new">+ Add Product</a>
+    </div>
+  </div>
+  <div class="row" *ngIf="getProductCount() > 0">
+    <div class="col-12">
+      <div class="input-group mb-3">
+        <input type="text" [(ngModel)]="searchTerm" class="form-control" placeholder="Search by name" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="search()">Search</button>
+        </div>
+      </div>
+    </div>
+    <table class="table table-condenced table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th><a class="btn btn-primary btn-sm" routerLink="/product/new">+ Add Product</a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let product of products">
+          <tr>
+            <td><a routerLink="/product/{{product._id}}">{{product.name}}</a></td>
+            <td>{{product.description}}</td>
+            <td>{{product.price | currency}}</td>
+            <td>
+              <button class="btn btn-link" (click)="deleteProduct(product._id)">Delete</button> |
+              <a class="btn btn-link" routerLink="/product/edit/{{product._id}}">Edit</a>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
