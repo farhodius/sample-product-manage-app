@@ -4,13 +4,7 @@
       <h1>Products</h1>
     </div>
   </div>
-  <div class="row" *ngIf="getProductCount() === 0">
-    <div class="col-12">
-      <div>No products found.</div>
-      <a class="btn btn-primary btn-sm" routerLink="/product/new">+ Add Product</a>
-    </div>
-  </div>
-  <div class="row" *ngIf="getProductCount() > 0">
+  <div class="row">
     <div class="col-12">
       <div class="input-group mb-3">
         <input type="text" [(ngModel)]="searchTerm" class="form-control" placeholder="Search by name" aria-describedby="button-addon2">
@@ -19,6 +13,14 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="row" *ngIf="getProductCount() === 0">
+    <div class="col-12">
+      <div>No products found.</div>
+      <a class="btn btn-primary btn-sm" routerLink="/product/new">+ Add Product</a>
+    </div>
+  </div>
+  <div class="row" *ngIf="getProductCount() > 0">
     <table class="table table-condenced table-striped">
       <thead>
         <tr>
