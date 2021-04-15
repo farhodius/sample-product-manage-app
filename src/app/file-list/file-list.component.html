@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Available Files</h1>
+    </div>
+  </div>
+  
+  <div class="row" *ngIf="getFilesCount() === 0">
+    <div class="col-12">
+      <div>No files found.</div>
+    </div>
+  </div>
+  <div class="row" *ngIf="getFilesCount() > 0">
+    <table class="table table-condenced table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let file of files">
+          <tr>
+            <td>{{file}}</td>
+            <td>
+              <button class="btn btn-link" (click)="downloadFile(file)">Download</button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

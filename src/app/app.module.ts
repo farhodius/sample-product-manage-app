@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './product/product.component';
 import { SaveProductComponent } from './save-product/save-product.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { FileListComponent } from './file-list/file-list.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ProductListComponent } from './product-list/product-list.component';
     LoginComponent,
     ProductComponent,
     SaveProductComponent,
-    ProductListComponent
+    ProductListComponent,
+    FileListComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,
