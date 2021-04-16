@@ -1,19 +1,29 @@
 # Code challenge - Product management frontend app
 
 Simple app that implements basic product handling API
+
 The app allows to create/read/update/delete and search products by name
-The app implements basic authentication using JWT. Demo loging and password are: demo-user/demo-pass
+
+The app implements basic authentication using JWT. Demo login and password are:
+- demo-admin/demo-pass - admin user with access to all routes
+- demo-user/demo-pass - user with access only to file upload route
+- demo-cs-rep/demo-pass - usaer with access only to file list and file upload routes
+Role based access control only implemented for the frontend app for now
 
 # Installation and usage
 
 Nodejs 10+ version needs to be installed on your machine.
+
 Run `npm instal` to install all the dependencies then `npm start` to start the app in development mode.
+
 Navigage to `http://localhost:4200` to access the app. Enter demo credentials from above to get access to the navbar and protected routes.
 
 # Code challenge summary
 
 UI is pretty basic and using bootstrap css for styling.
+
 App only has one major route to manage products with a few children routes.
+
 Fixed basic unit tests and added a few custom ones
 
 #### Known issues:

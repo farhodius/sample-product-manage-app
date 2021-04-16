@@ -14,4 +14,8 @@ export class HomeComponent implements OnInit {
   isLoggedIn() {
     return this.authService.isLoggedIn();
   }
+
+  get currentUser() {
+    return this.authService.currentUser;
+  }
 }
