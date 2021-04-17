@@ -11,6 +11,13 @@
       </div>
     </div>
   </div>
+  <div class="row" *ngIf="errorAlertMsg">
+    <div class="col-12">
+      <div class="alert alert-danger" role="alert">
+        {{ errorAlertMsg }}
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-12">
       <form
